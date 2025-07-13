@@ -17,4 +17,4 @@ việc chuyển từ JAWS for Windows trở nên trôi chảy hơn và để ng�
 thông báo dạng tooltips có thể hiển thị khi di chuyển trong system tray bằng
 phím lệnh của Windows.
 
-[1]: https://github.com/ruifontes/systrayList/releases/download/2024.03.23/systrayList-2024.03.23.nvda-addon
+[1]: https://github.com/ruifontes/systrayList/releases/download/2025.07.13/systrayList-2025.07.13.nvda-addon

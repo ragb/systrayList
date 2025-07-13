@@ -23,4 +23,4 @@ le clavier Windows.
 
 [[!tag stable]]
 
-[1]: https://github.com/ruifontes/systrayList/releases/download/2024.03.23/systrayList-2024.03.23.nvda-addon
+[1]: https://github.com/ruifontes/systrayList/releases/download/2025.07.13/systrayList-2025.07.13.nvda-addon
