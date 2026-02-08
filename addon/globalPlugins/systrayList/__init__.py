@@ -6,7 +6,7 @@
 # Masamitsu Misono <misono@nvsupport.org>
 # Joseph Lee <joseph.lee22590@gmail.com>
 # Shortcut: NVDA+f11
-# Copyright 2013-2023, released under GPL.
+# Copyright 2013-2026, released under GPL.
 
 import os.path
 import wx
@@ -17,6 +17,8 @@ from scriptHandler import script
 import NVDAObjects
 import winUser
 import windowUtils
+#from UIAHandler import handler
+#import comtypes
 import ctypes
 import gui
 import addonHandler
@@ -28,7 +30,7 @@ def mouseEvents(location, *events):
 	winUser.setCursorPos (x,y)
 	#simulation of pressing mouse button
 	for event in events:
-		winUser.mouse_event(event, 0, 0, None, None)
+		winUser.mouse_event(event, 0, 0, 0, 0)
 
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
@@ -88,7 +90,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# We start in the second object because the first object do not interesse us...
 		o = 1
 		while o in range(len(obj)):
-			l.append((obj[o].name, obj[o].location))
+			l.append((obj[o].name.strip(), obj[o].location))
 			o = o+1
 		return l
 
@@ -122,8 +124,32 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._createObjectsWindow(objects, _("System Tray List"), _("Icons on the System Tray:"))
 
 	def _createTaskList(self):
-		objects = self._findAccessibleLeafsFromWindowClassPath(("Shell_TrayWnd", "RebarWindow32", "MSTaskSwWClass", "MSTaskListWClass") ,)
+		from winVersion import getWinVer, WinVersion
+		win11_25h2 = getWinVer() >= WinVersion(major=10, minor=0, build=26200)
+		if win11_25h2:
+			objects = self._findAccessibleTaskbarLeafs_win11_25H2()
+		else:
+			objects = self._findAccessibleLeafsFromWindowClassPath(("Shell_TrayWnd", "RebarWindow32", "MSTaskSwWClass", "MSTaskListWClass"),)
 		self._createObjectsWindow(objects, _("Taskbar List"), _("Icons of running applications on the taskbar:"))
+
+	def _findAccessibleTaskbarLeafs_win11_25H2(self):
+		"""
+		Create a list of (obj.name, obj.location)
+		"""
+		# Starting to find the handle of the Shell_TrayWnd window
+		h = winUser.FindWindow("Shell_TrayWnd", None)
+		# Now, lets get the handle of Windows.UI.Input.InputSite.WindowClass window, where the icons reside...
+		hwnd = windowUtils.findDescendantWindow(h, visible=None, controlID=None, className="Windows.UI.Input.InputSite.WindowClass")
+		# Now, lets get all objects in this window and its location
+		obj = NVDAObjects.IAccessible.getNVDAObjectFromEvent(hwnd, -4, 0).children
+		taskbar = obj[0].children  #The obj[0] is a list of taskbar buttons + start button in first place
+		l = []
+		# We start in the second object because the first object do not interesse us...
+		o = 1
+		while o in range(len(taskbar)):
+			l.append((taskbar[o].name, taskbar[o].location))
+			o = o+1
+		return l
 
 	def _createObjectsWindow(self, objects, title, label):
 		if globalVars.appArgs.secure:
