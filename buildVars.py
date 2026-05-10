@@ -14,41 +14,39 @@ from site_scons.site_tools.NVDATool.utils import _
 # Add-on information variables
 addon_info = AddonInfo(
 	# add-on Name/identifier, internal for NVDA
-	addon_name="systrayList",
+	addon_name = "systrayList",
 	# Add-on summary/title, usually the user visible name of the add-on
 	# Translators: Summary/title for this add-on
 	# to be shown on installation and add-on information found in add-on store
-	addon_summary=_("SysTrayList"),
+	addon_summary = _("SysTrayList"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-on store
-	addon_description=_("""Shows the list of buttons on the System Tray with NVDA+F11 once, twice shows running task lists."""),
+	addon_description = _("""Shows the list of buttons on the System Tray with NVDA+F11 once, twice shows running task lists."""),
 	# version
-	addon_version="2026.02.08",
+	addon_version = "2026.05.10",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""Corrected bugs:
-	- Routine to perform the mouse clicks;
-	- Routine to get the taskbar buttons on Windows 11 25H2."""),
+	addon_changelog = _("""Set compatibility with NVDA 2026.1"""),
 	# Author(s)
-	addon_author="Rui Fontes <rui.fontes@tiflotecnia.com>, Rui Batista <ruiandrebatista@gmail.com>, Joseph Lee <joseph.lee22590@gmail.com>, NVDA Community Contributors",
+	addon_author = "Rui Fontes <rui.fontes@tiflotecnia.com>, Rui Batista <ruiandrebatista@gmail.com>, Joseph Lee <joseph.lee22590@gmail.com>, NVDA Community Contributors",
 	# URL for the add-on documentation support
-	addon_url="https://github.com/ruifontes/systrayList",
+	addon_url = "https://github.com/ruifontes/systrayList",
 	# URL for the add-on repository where the source code can be found
-	addon_sourceURL="https://github.com/ruifontes/systrayList",
+	addon_sourceURL = "https://github.com/ruifontes/systrayList",
 	# Documentation file name
 	addon_docFileName="readme.html",
 	# Minimum NVDA version supported (e.g. "2019.3.0", minor version is optional)
-	addon_minimumNVDAVersion=2019.3,
+	addon_minimumNVDAVersion ="2019.3", 
 	# Last NVDA version supported/tested (e.g. "2024.4.0", ideally more recent than minimum version)
-	addon_lastTestedNVDAVersion=2025.3,
+	addon_lastTestedNVDAVersion = "2026.1",
 	# Add-on update channel (default is None, denoting stable releases,
 	# and for development releases, use "dev".)
 	# Do not change unless you know what you are doing!
 	addon_updateChannel=None,
 	# Add-on license such as GPL 2
-	addon_license="GPL 2",
+	addon_license = "GPL 2",
 	# URL for the license document the ad-on is licensed under
-	addon_licenseURL="https://www.gnu.org/licenses/gpl-2.0.html",
+	addon_licenseURL = "https://www.gnu.org/licenses/gpl-2.0.html",
 )
 
 # Define the python files that are the sources of your add-on.
