@@ -8,7 +8,6 @@
 # Shortcut: NVDA+f11
 # Copyright 2013-2026, released under GPL.
 
-import os.path
 import wx
 import globalPluginHandler
 import globalVars
@@ -54,14 +53,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		h, FindWindowEx =0, winUser.user32.FindWindowExW
 		for element in windowClassPath:
 			h = FindWindowEx(h,0,element,0)
-		l = []
+		leafs = []
 		o = NVDAObjects.IAccessible.getNVDAObjectFromEvent(h,-4,1)
 		# When o.next is None it means that there is no more objects on the systray.
 		while o is not None:
 			if o.name:
-				l.append((o.name, o.location))
+				leafs.append((o.name, o.location))
 			o = o.next
-		return l
+		return leafs
 
 	def _findAccessibleLeafsFromWindowClassPath11(self, windowClassPath):
 		# Create a list of (obj.name, obj.location)
@@ -71,10 +70,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			#if not h:
 			#	break
 		obj = NVDAObjects.IAccessible.getNVDAObjectFromEvent(h, -4, 0).firstChild.children
-		l = []
+		leafs = []
 		for o in obj:
-			l.append((o.name, o.location))
-		return l
+			leafs.append((o.name, o.location))
+		return leafs
 
 	def _findAccessibleLeafsFromWindowClassPath11_22h2(self):
 		"""
@@ -86,13 +85,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		hwnd = windowUtils.findDescendantWindow(h, visible=None, controlID=None, className="Windows.UI.Input.InputSite.WindowClass")
 		# Now, lets get all objects in this window and its location
 		obj = NVDAObjects.IAccessible.getNVDAObjectFromEvent(hwnd, -4, 0).children
-		l = []
+		leafs = []
 		# We start in the second object because the first object do not interesse us...
 		o = 1
 		while o in range(len(obj)):
-			l.append((obj[o].name.strip(), obj[o].location))
+			leafs.append((obj[o].name.strip(), obj[o].location))
 			o = o+1
-		return l
+		return leafs
 
 	@script( 
 		# Translators: Message to be announced during Keyboard Help 
@@ -143,13 +142,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Now, lets get all objects in this window and its location
 		obj = NVDAObjects.IAccessible.getNVDAObjectFromEvent(hwnd, -4, 0).children
 		taskbar = obj[0].children  #The obj[0] is a list of taskbar buttons + start button in first place
-		l = []
+		leafs = []
 		# We start in the second object because the first object do not interesse us...
 		o = 1
 		while o in range(len(taskbar)):
-			l.append((taskbar[o].name, taskbar[o].location))
+			leafs.append((taskbar[o].name, taskbar[o].location))
 			o = o+1
-		return l
+		return leafs
 
 	def _createObjectsWindow(self, objects, title, label):
 		if globalVars.appArgs.secure:
