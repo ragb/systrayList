@@ -44,7 +44,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Destroy the window on plugin deletion just to make sure it goes away
 		# (to prevent strange things when reloading plugin)
 		try:
-			if not self._systrayListDialog:
+			if self._systrayListDialog:
 				self._systrayListDialog.Destroy()
 		except (AttributeError, RuntimeError):
 			pass
@@ -216,7 +216,6 @@ class SystrayListDialog(wx.Dialog):
 
 	def makeBindingClickFunction(self, *events):
 		def func(event):
-			self.Destroy
 			index = self.listBox.GetSelections()
 			if index is not None:
 				location = self.systray[index[0]][1]
