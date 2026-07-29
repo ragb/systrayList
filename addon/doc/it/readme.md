@@ -10,7 +10,7 @@ delle icone del System Tray o della barra delle applicazioni  tramite una
 casella ad elenco per accedere più velocemente agli elementi. Con il
 componente installato, premere NVDA+f11 per far apparire questa finestra di
 dialogo, o premere la stessa combinazione due volte per far apparire
-l'elenco dei programmi presenti nellabarra delle applicazioni. 
+l'elenco dei programmi presenti nellabarra delle applicazioni.
 
 Si noti che è possibile accedere alla barra delle notifiche di windows
 utilizzando il comando Windows+B, e alla barra delle applicazioni premendo

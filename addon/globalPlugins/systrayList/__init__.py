@@ -8,7 +8,6 @@
 # Shortcut: NVDA+f11
 # Copyright 2013-2026, released under GPL.
 
-import os.path
 import wx
 import globalPluginHandler
 import globalVars
@@ -17,18 +16,21 @@ from scriptHandler import script
 import NVDAObjects
 import winUser
 import windowUtils
-#from UIAHandler import handler
-#import comtypes
+
+# from UIAHandler import handler
+# import comtypes
 import ctypes
 import gui
 import addonHandler
+
 addonHandler.initTranslation()
 
+
 def mouseEvents(location, *events):
-	x,y = int (location[0]+location[2]/2), int (location[1]+location[3]/2)
-	#move the cursor
-	winUser.setCursorPos (x,y)
-	#simulation of pressing mouse button
+	x, y = int(location[0] + location[2] / 2), int(location[1] + location[3] / 2)
+	# move the cursor
+	winUser.setCursorPos(x, y)
+	# simulation of pressing mouse button
 	for event in events:
 		winUser.mouse_event(event, 0, 0, 0, 0)
 
@@ -51,30 +53,30 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def _findAccessibleLeafsFromWindowClassPath(self, windowClassPath):
 		# Create a list of (obj.name, obj.location)
-		h, FindWindowEx =0, winUser.user32.FindWindowExW
+		h, FindWindowEx = 0, winUser.user32.FindWindowExW
 		for element in windowClassPath:
-			h = FindWindowEx(h,0,element,0)
-		l = []
-		o = NVDAObjects.IAccessible.getNVDAObjectFromEvent(h,-4,1)
+			h = FindWindowEx(h, 0, element, 0)
+		leafs = []
+		o = NVDAObjects.IAccessible.getNVDAObjectFromEvent(h, -4, 1)
 		# When o.next is None it means that there is no more objects on the systray.
 		while o is not None:
 			if o.name:
-				l.append((o.name, o.location))
+				leafs.append((o.name, o.location))
 			o = o.next
-		return l
+		return leafs
 
 	def _findAccessibleLeafsFromWindowClassPath11(self, windowClassPath):
 		# Create a list of (obj.name, obj.location)
 		h = 0
 		for className in windowClassPath:
 			h = ctypes.windll.user32.FindWindowExA(h, 0, className, 0)
-			#if not h:
-			#	break
+			# if not h:
+			# break
 		obj = NVDAObjects.IAccessible.getNVDAObjectFromEvent(h, -4, 0).firstChild.children
-		l = []
+		leafs = []
 		for o in obj:
-			l.append((o.name, o.location))
-		return l
+			leafs.append((o.name, o.location))
+		return leafs
 
 	def _findAccessibleLeafsFromWindowClassPath11_22h2(self):
 		"""
@@ -83,23 +85,31 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Starting to find the handle of the Shell_TrayWnd window
 		h = winUser.FindWindow("Shell_TrayWnd", None)
 		# Now, lets get the handle of Windows.UI.Input.InputSite.WindowClass window, where the icons reside...
-		hwnd = windowUtils.findDescendantWindow(h, visible=None, controlID=None, className="Windows.UI.Input.InputSite.WindowClass")
+		hwnd = windowUtils.findDescendantWindow(
+			h,
+			visible=None,
+			controlID=None,
+			className="Windows.UI.Input.InputSite.WindowClass",
+		)
 		# Now, lets get all objects in this window and its location
 		obj = NVDAObjects.IAccessible.getNVDAObjectFromEvent(hwnd, -4, 0).children
-		l = []
+		leafs = []
 		# We start in the second object because the first object do not interesse us...
 		o = 1
 		while o in range(len(obj)):
-			l.append((obj[o].name.strip(), obj[o].location))
-			o = o+1
-		return l
+			leafs.append((obj[o].name.strip(), obj[o].location))
+			o = o + 1
+		return leafs
 
-	@script( 
-		# Translators: Message to be announced during Keyboard Help 
-		description=_("Shows the list of buttons on the System Tray. If pressed twice quickly, shows the items on the taskbar."), 
-		# Translators: Name of the section in "Input gestures" dialog. 
-		category=_("Systray list"), 
-		gesture="kb:NVDA+f11")
+	@script(
+		# Translators: Message to be announced during Keyboard Help
+		description=_(
+			"Shows the list of buttons on the System Tray. If pressed twice quickly, shows the items on the taskbar.",
+		),
+		# Translators: Name of the section in "Input gestures" dialog.
+		category=_("Systray list"),
+		gesture="kb:NVDA+f11",
+	)
 	def script_createList(self, gesture):
 		if scriptHandler.getLastScriptRepeatCount() == 0:
 			self._createSystrayList()
@@ -111,6 +121,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		path11 = ("shell_TrayWnd", "TrayNotifyWnd", "Windows.UI.Composition.DesktopWindowContentBridge")
 		try:
 			from winVersion import getWinVer, WinVersion
+
 			win11_22h2 = getWinVer() >= WinVersion(major=10, minor=0, build=22621)
 			win11 = getWinVer() >= WinVersion(major=10, minor=0, build=22000)
 		except ImportError:
@@ -125,12 +136,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def _createTaskList(self):
 		from winVersion import getWinVer, WinVersion
+
 		win11_25h2 = getWinVer() >= WinVersion(major=10, minor=0, build=26200)
 		if win11_25h2:
 			objects = self._findAccessibleTaskbarLeafs_win11_25H2()
 		else:
-			objects = self._findAccessibleLeafsFromWindowClassPath(("Shell_TrayWnd", "RebarWindow32", "MSTaskSwWClass", "MSTaskListWClass"),)
-		self._createObjectsWindow(objects, _("Taskbar List"), _("Icons of running applications on the taskbar:"))
+			objects = self._findAccessibleLeafsFromWindowClassPath(
+				("Shell_TrayWnd", "RebarWindow32", "MSTaskSwWClass", "MSTaskListWClass"),
+			)
+		self._createObjectsWindow(
+			objects,
+			_("Taskbar List"),
+			_("Icons of running applications on the taskbar:"),
+		)
 
 	def _findAccessibleTaskbarLeafs_win11_25H2(self):
 		"""
@@ -139,17 +157,22 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Starting to find the handle of the Shell_TrayWnd window
 		h = winUser.FindWindow("Shell_TrayWnd", None)
 		# Now, lets get the handle of Windows.UI.Input.InputSite.WindowClass window, where the icons reside...
-		hwnd = windowUtils.findDescendantWindow(h, visible=None, controlID=None, className="Windows.UI.Input.InputSite.WindowClass")
+		hwnd = windowUtils.findDescendantWindow(
+			h,
+			visible=None,
+			controlID=None,
+			className="Windows.UI.Input.InputSite.WindowClass",
+		)
 		# Now, lets get all objects in this window and its location
 		obj = NVDAObjects.IAccessible.getNVDAObjectFromEvent(hwnd, -4, 0).children
-		taskbar = obj[0].children  #The obj[0] is a list of taskbar buttons + start button in first place
-		l = []
+		taskbar = obj[0].children  # The obj[0] is a list of taskbar buttons + start button in first place
+		leafs = []
 		# We start in the second object because the first object do not interesse us...
 		o = 1
 		while o in range(len(taskbar)):
-			l.append((taskbar[o].name, taskbar[o].location))
-			o = o+1
-		return l
+			leafs.append((taskbar[o].name, taskbar[o].location))
+			o = o + 1
+		return leafs
 
 	def _createObjectsWindow(self, objects, title, label):
 		if globalVars.appArgs.secure:
@@ -201,10 +224,27 @@ class SystrayListDialog(wx.Dialog):
 		# The "makeBindingClicFunction" just returns a function
 		# that performs the passed events. Functional programming at its best.
 		# Except for Cancel button that should destroy this dialog.
-		self.Bind( wx.EVT_BUTTON, self.makeBindingClickFunction(winUser.MOUSEEVENTF_LEFTDOWN, winUser.MOUSEEVENTF_LEFTUP), id=leftClickButtonID)
-		self.Bind( wx.EVT_BUTTON, self.makeBindingClickFunction(winUser.MOUSEEVENTF_LEFTDOWN, winUser.MOUSEEVENTF_LEFTUP, winUser.MOUSEEVENTF_LEFTDOWN, winUser.MOUSEEVENTF_LEFTUP), id=leftDoubleClickButtonID)
-		self.Bind( wx.EVT_BUTTON, self.makeBindingClickFunction(winUser.MOUSEEVENTF_RIGHTDOWN, winUser.MOUSEEVENTF_RIGHTUP), id=rightClickButtonID)
-		self.Bind(wx.EVT_BUTTON,self.onClose,id=wx.ID_CANCEL)
+		self.Bind(
+			wx.EVT_BUTTON,
+			self.makeBindingClickFunction(winUser.MOUSEEVENTF_LEFTDOWN, winUser.MOUSEEVENTF_LEFTUP),
+			id=leftClickButtonID,
+		)
+		self.Bind(
+			wx.EVT_BUTTON,
+			self.makeBindingClickFunction(
+				winUser.MOUSEEVENTF_LEFTDOWN,
+				winUser.MOUSEEVENTF_LEFTUP,
+				winUser.MOUSEEVENTF_LEFTDOWN,
+				winUser.MOUSEEVENTF_LEFTUP,
+			),
+			id=leftDoubleClickButtonID,
+		)
+		self.Bind(
+			wx.EVT_BUTTON,
+			self.makeBindingClickFunction(winUser.MOUSEEVENTF_RIGHTDOWN, winUser.MOUSEEVENTF_RIGHTUP),
+			id=rightClickButtonID,
+		)
+		self.Bind(wx.EVT_BUTTON, self.onClose, id=wx.ID_CANCEL)
 		mainSizer.Add(buttonsSizer)
 		mainSizer.Fit(self)
 		self.SetSizer(mainSizer)
@@ -221,6 +261,7 @@ class SystrayListDialog(wx.Dialog):
 				location = self.systray[index[0]][1]
 				mouseEvents(location, *events)
 			self.Hide()
+
 		return func
 
 	def updateSystray(self, systray, title, label):
