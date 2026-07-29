@@ -30,9 +30,9 @@ addon_info = AddonInfo(
 	# Author(s)
 	addon_author = "Rui Fontes <rui.fontes@tiflotecnia.com>, Rui Batista <ruiandrebatista@gmail.com>, Joseph Lee <joseph.lee22590@gmail.com>, NVDA Community Contributors",
 	# URL for the add-on documentation support
-	addon_url = "https://github.com/ruifontes/systrayList",
+	addon_url = "https://github.com/ragb/systrayList",
 	# URL for the add-on repository where the source code can be found
-	addon_sourceURL = "https://github.com/ruifontes/systrayList",
+	addon_sourceURL = "https://github.com/ragb/systrayList",
 	# Documentation file name
 	addon_docFileName="readme.html",
 	# Minimum NVDA version supported (e.g. "2019.3.0", minor version is optional)
