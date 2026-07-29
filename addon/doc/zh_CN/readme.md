@@ -10,4 +10,4 @@ f11一次，此对话框弹出系统托盘窗口，然后按两次显示任务�
 注意，您可以使用Windows + B访问任何屏幕阅读器软件中的Windows系统托盘，按Windows + T可以访问任务栏。此插件仅用于使从JAWS
 for Windows的过渡更顺畅，并避免在使用Windows键盘装置循环通过系统托盘时可能弹出的一些工具提示。
 
-[1]: https://github.com/ruifontes/systrayList/releases/download/2025.07.13/systrayList-2025.07.13.nvda-addon
+[1]: https://github.com/ragb/systrayList/releases/download/2026.07.29/systrayList-2026.07.29.nvda-addon

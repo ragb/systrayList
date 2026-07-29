@@ -21,4 +21,4 @@ con las teclas de windows.
 
 [[!tag stable]]
 
-[1]: https://github.com/ruifontes/systrayList/releases/download/2025.07.13/systrayList-2025.07.13.nvda-addon
+[1]: https://github.com/ragb/systrayList/releases/download/2026.07.29/systrayList-2026.07.29.nvda-addon
