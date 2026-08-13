@@ -1,21 +1,39 @@
-# systrayList #
+# systrayList
 
-*   Autorzy: Rui Fontes, Rui Batista, Joseph Lee, współtwórcy zespołu NVDA
-*   Pobierz [wersja stabilna][1]
-*   NVDA compatibility: 2019.3 and beyond
+## Ku pamięci Ruiego Fontesa
 
-Ta wtyczka umożliwia odczyt i aktywowanie ikon w zasobniku systemowym lub na
-pasku zadań, wybieranych z listy, dla łatwego dostępu do tych elementów i
-interakcji z nimi. Po zainstalowaniu wtyczki, naciśnij raz NVDA+f11 dla
-uzyskania listy elementów zasobnika systemowego, naciśnij dwukrotnie dla
-wyświetlenia zawartości paska zadań, czyli listy aktualnie uruchomionych
-aplikacji.
+Ten dodatek jest utrzymywany i rozwijany ku pamięci Ruiego Fontesa, który zmarł
+11 lipca 2026 roku.
 
-Trzeba mieć na uwadzę, że do zasobnika systemowego można się dostać używając
-polecenia Windows+B, a do paska zadań  Windows+T. Ten dodatek służy do
-ułatwiania przejścia z jawsa do NVDA i a także żeby zapobiec niektóre dymki
-które widzimy z poziomu nawigacji za pomocą klawiatury.
+Rui poświęcił znaczną część życia udostępnianiu technologii osobom niewidomym
+i słabowidzącym. Jego hojność, umiejętności i zaangażowanie pomogły niezliczonej
+liczbie użytkowników oraz współtwórców społeczności NVDA. Projekt jest
+kontynuowany ku jego pamięci i z wdzięcznością za wszystko, co zrobił. Niech
+jego praca nadal otwiera drzwi tym, którzy tego potrzebują.
 
-[[!tag stable]]
+## Informacje o dodatku
 
-[1]: https://github.com/ragb/systrayList/releases/download/2026.07.29/systrayList-2026.07.29.nvda-addon
+- Autorzy: Rui Fontes, Rui Batista, Joseph Lee oraz współtwórcy społeczności NVDA.
+- Minimalna wersja NVDA: 2021.1.
+- Ostatnia testowana wersja NVDA: 2026.2.
+
+Dodatek umożliwia odczytywanie i aktywowanie ikon z obszaru powiadomień oraz
+przycisków aplikacji na pasku zadań. Elementy są prezentowane w polu listy,
+co ułatwia ich wyszukiwanie i obsługę.
+
+Po zainstalowaniu dodatku naciśnij `NVDA+F11` jeden raz, aby otworzyć listę
+elementów obszaru powiadomień. Szybkie dwukrotne naciśnięcie tego skrótu
+wyświetla elementy paska zadań, czyli aktualnie uruchomione aplikacje.
+
+System Windows udostępnia także bezpośrednią nawigację: `Windows+B` przenosi
+fokus do obszaru powiadomień, a `Windows+T` przenosi fokus na pasek zadań.
+Dodatek ułatwia przejście z programu JAWS do NVDA i pomaga uniknąć dymków,
+które mogą pojawiać się podczas przechodzenia po obszarze powiadomień
+za pomocą klawiatury.
+
+## Dziennik zmian
+
+### 2026.07.29
+
+- Dodano zgodność z NVDA 2026.2.
+- Poprawiono minimalną wymaganą wersję NVDA — teraz jest to 2021.1.
