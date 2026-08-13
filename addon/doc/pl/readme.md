@@ -14,6 +14,7 @@ jego praca nadal otwiera drzwi tym, którzy tego potrzebują.
 ## Informacje o dodatku
 
 - Autorzy: Rui Fontes, Rui Batista, Joseph Lee oraz współtwórcy społeczności NVDA.
+- Tłumaczenie na język polski: Kazimierz Parzych.
 - Minimalna wersja NVDA: 2021.1.
 - Ostatnia testowana wersja NVDA: 2026.2.
 
