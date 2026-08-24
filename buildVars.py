@@ -23,10 +23,10 @@ addon_info = AddonInfo(
 	# Translators: Long description to be shown for this add-on on add-on information from add-on store
 	addon_description = _("""Shows the list of buttons on the System Tray with NVDA+F11 once, twice shows running task lists."""),
 	# version
-	addon_version = "2026.07.29",
+	addon_version = "2026.08.24",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog = _("""Set compatibility with NVDA 2026.2; corrected minimum NVDA version to 2021.1."""),
+	addon_changelog = _("""Updated the Polish translation and documentation."""),
 	# Author(s)
 	addon_author = "Rui Fontes <rui.fontes@tiflotecnia.com>, Rui Batista <ruiandrebatista@gmail.com>, Joseph Lee <joseph.lee22590@gmail.com>, NVDA Community Contributors",
 	# URL for the add-on documentation support

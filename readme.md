@@ -18,6 +18,10 @@ Note that you can access the windows system tray in any screen reader software u
 
 ## Changelog
 
+### 2026.08.24
+
+* Updated the Polish translation and documentation, contributed by Kazimierz Parzych.
+
 ### 2026.07.29
 
 * Set compatibility with NVDA 2026.2.
