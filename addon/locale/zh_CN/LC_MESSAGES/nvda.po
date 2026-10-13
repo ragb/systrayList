@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2026-10-06 22:48+0000\n"
-"PO-Revision-Date: 2026-10-06 22:57\n"
+"PO-Revision-Date: 2026-10-13 00:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -24,7 +24,7 @@ msgstr "显示系统托盘按钮的列表；连按两次显示任务栏的项目
 #. Translators: Name of the section in "Input gestures" dialog.
 #: addon\globalPlugins\systrayList\__init__.py:110
 msgid "Systray list"
-msgstr ""
+msgstr "系统托盘列表"
 
 #: addon\globalPlugins\systrayList\__init__.py:135
 msgid "System Tray List"
@@ -74,5 +74,5 @@ msgstr "用“NVDA+F11”显示系统托盘按钮的列表；连按两次，显�
 #. Translators: what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:29
 msgid "Updated the Polish translation and documentation."
-msgstr ""
+msgstr "更新了波兰语翻译和文档。"
 

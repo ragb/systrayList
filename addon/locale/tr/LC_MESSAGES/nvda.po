@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2026-10-06 22:48+0000\n"
-"PO-Revision-Date: 2026-10-06 22:57\n"
+"PO-Revision-Date: 2026-10-13 00:27\n"
 "Last-Translator: \n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
@@ -24,11 +24,11 @@ msgstr "Sistem tepsisi düğmelerini gösterir. İki kez basıldığında ise, g
 #. Translators: Name of the section in "Input gestures" dialog.
 #: addon\globalPlugins\systrayList\__init__.py:110
 msgid "Systray list"
-msgstr ""
+msgstr "Sistem tepsisi listesi"
 
 #: addon\globalPlugins\systrayList\__init__.py:135
 msgid "System Tray List"
-msgstr "Sistem tepsisi"
+msgstr "Sistem tepsisi Listesi"
 
 #: addon\globalPlugins\systrayList\__init__.py:135
 msgid "Icons on the System Tray:"
@@ -74,5 +74,5 @@ msgstr "Sistem tepsisi simgelerini görüntüler. İki kez basıldığında ise,
 #. Translators: what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:29
 msgid "Updated the Polish translation and documentation."
-msgstr ""
+msgstr "Lehçe çeviri ve Belgeler güncellendi."
 

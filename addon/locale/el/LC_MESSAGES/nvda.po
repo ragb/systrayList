@@ -1,103 +1,78 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-#
-# Σύλλογος Τεχνολογικής Ανάπτυξης Τυφλών (ΣΤΑΤ), 2012.
-# Translated by Gerasimos Xydas (e-rhetor) on behalf of the Hellenic Technology for the Blind Development Association (STAT)
-#
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: SysTrayList\n"
+"Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-02-25 16:20+0000\n"
-"PO-Revision-Date: 2023-02-25 16:55+0000\n"
-"Last-Translator: Gerasimos Xydas <access@e-rhetor.com>\n"
-"Language-Team: Gerasimos Xydas <access@e-rhetor.com>\n"
-"Language: el\n"
+"POT-Creation-Date: 2026-10-06 22:48+0000\n"
+"PO-Revision-Date: 2026-10-07 01:16\n"
+"Last-Translator: \n"
+"Language-Team: Greek\n"
+"Language: el_GR\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.2.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: nvdaaddons\n"
+"X-Crowdin-Project-ID: 780748\n"
+"X-Crowdin-Language: el\n"
+"X-Crowdin-File: systrayList.pot\n"
+"X-Crowdin-File-ID: 340\n"
 
-#. For translators: Message to be announced during Keyboard Help
-#: addon\globalPlugins\systrayList\__init__.py:81
-msgid ""
-"Shows the list of buttons on the System Tray. If pressed twice quickly, "
-"shows the items on the taskbar."
-msgstr ""
-"Εμφανίζει τη λίστα των κουμπιών στον χώρο ειδοποιήσεων. Αν πατηθεί γρήγορα "
-"δύο φορές, εμφανίζει στα στοιχεία στη λωρίδα εργασιών."
+#: addon\globalPlugins\systrayList\__init__.py:107
+msgid "Shows the list of buttons on the System Tray. If pressed twice quickly, shows the items on the taskbar."
+msgstr "Εμφανίζει τη λίστα των κουμπιών στον χώρο ειδοποιήσεων. Αν πατηθεί γρήγορα δύο φορές, εμφανίζει στα στοιχεία στη λωρίδα εργασιών."
 
-#. For translators: Name of the section in "Input gestures" dialog.
-#: addon\globalPlugins\systrayList\__init__.py:83
+#. Translators: Name of the section in "Input gestures" dialog.
+#: addon\globalPlugins\systrayList\__init__.py:110
 msgid "Systray list"
 msgstr "Λίστα Χώρου Ειδοποιήσεων"
 
-#: addon\globalPlugins\systrayList\__init__.py:103
+#: addon\globalPlugins\systrayList\__init__.py:135
 msgid "System Tray List"
 msgstr "Λίστα Χώρου Ειδοποιήσεων"
 
-#: addon\globalPlugins\systrayList\__init__.py:103
+#: addon\globalPlugins\systrayList\__init__.py:135
 msgid "Icons on the System Tray:"
 msgstr "Εικονίδια στο Χώρο Ειδοποιήσεων"
 
-#: addon\globalPlugins\systrayList\__init__.py:107
+#: addon\globalPlugins\systrayList\__init__.py:149
 msgid "Taskbar List"
 msgstr "Λίστα Λωρίδας Διεργασιών"
 
-#: addon\globalPlugins\systrayList\__init__.py:107
+#: addon\globalPlugins\systrayList\__init__.py:150
 msgid "Icons of running applications on the taskbar:"
 msgstr "Εικονίδια εφαρμογών που εκτελούνται στη λωρίδα διεργασιών"
 
 #. Translators: A button on the system tray list dialog to perform left mouse click.
-#: addon\globalPlugins\systrayList\__init__.py:143
+#: addon\globalPlugins\systrayList\__init__.py:211
 msgid "&Left Click"
 msgstr "&Αριστερό κλικ"
 
 #. Translators: A button in the system tray list dialog to perform left double mouse click.
-#: addon\globalPlugins\systrayList\__init__.py:147
+#: addon\globalPlugins\systrayList\__init__.py:215
 msgid "Left &Double Click"
 msgstr "&Διπλό Αριστερό κλικ"
 
 #. Translators: A button in the system tray list dialog to perform right mouse click.
-#: addon\globalPlugins\systrayList\__init__.py:151
+#: addon\globalPlugins\systrayList\__init__.py:219
 msgid "&Right Click"
 msgstr "&Δεξί κλικ"
 
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on to be shown on installation and add-on information.
-#: buildVars.py:17
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: buildVars.py:21
 msgid "SysTrayList"
 msgstr "Λίστα Χώρου Ειδοποιήσεων"
 
 #. Add-on description
-#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#: buildVars.py:20
-msgid ""
-"Shows the list of buttons on the System Tray with NVDA+F11 once, twice shows "
-"running task lists."
+#. Translators: Long description to be shown for this add-on on add-on information from add-on store
+#: buildVars.py:24
+msgid "Shows the list of buttons on the System Tray with NVDA+F11 once, twice shows running task lists."
+msgstr "Εμφανίζει σε Λίστα Κουμπιών τα Αντικείμενα που υπάρχουν στον Χώρο Ειδοποιήσεων πατώντας τα πλήκτρα NVDA+F11 μία φορά. Πατώντας δύο φορές εμφανίζει τις τρέχουσες διεργασίες."
+
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:29
+msgid "Updated the Polish translation and documentation."
 msgstr ""
-"Εμφανίζει σε Λίστα Κουμπιών τα Αντικείμενα που υπάρχουν στον Χώρο "
-"Ειδοποιήσεων πατώντας τα πλήκτρα NVDA+F11 μία φορά. Πατώντας δύο φορές "
-"εμφανίζει τις τρέχουσες διεργασίες."
 
-#~ msgid ""
-#~ " {name} is a free add-on for NVDA.\n"
-#~ "You can make a donation to its author to support further developments of "
-#~ "this add-on and other free software products.\n"
-#~ "Do you want to donate now? (you will be redirected to the Paypal website)."
-#~ msgstr ""
-#~ " Το {name} είναι ένα δωρεάν πρόσθετο για το NVDA.\n"
-#~ "You can make a donation to its author to support further developments of "
-#~ "this add-on and other free software products.\n"
-#~ "Do you want to donate now? (you will be redirected to the Paypal website)."
-
-#~ msgid "Request for Contributions to {name}"
-#~ msgstr "Request for Contributions to {name}"
-
-#, fuzzy
-#~ msgid "sysTrayList - list sys tray and task bar elements"
-#~ msgstr ""
-#~ "Εμφανίζει λίστα με τα στοιχεία στο Χώρο Ειδοποιήσεων και τη Λωρίδα "
-#~ "Εργασιών."

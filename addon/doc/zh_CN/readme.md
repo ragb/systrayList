@@ -1,13 +1,28 @@
-# systrayList托盘图标插件 #
+# 系统托盘列表
 
-*   作者: Rui Fontes, Rui Batista, Joseph Lee, NVDA Community contributors
-*   下载 [稳定版][1]
-*   NVDA兼容版本：2019.3 and beyond
+## 谨此缅怀 Rui Fontes
 
-此插件允许您在列表框中读取和激活系统托盘或任务栏上的图标，以便于访问和浏览这些项目。安装了插件后，按NVDA +
-f11一次，此对话框弹出系统托盘窗口，然后按两次显示任务栏窗口。
+本插件的维护和改进是为了纪念于 2026 年 7 月 11 日去世的 Rui Fontes。
 
-注意，您可以使用Windows + B访问任何屏幕阅读器软件中的Windows系统托盘，按Windows + T可以访问任务栏。此插件仅用于使从JAWS
-for Windows的过渡更顺畅，并避免在使用Windows键盘装置循环通过系统托盘时可能弹出的一些工具提示。
+Rui 将一生中的大量时光奉献给了让盲人和低视力人士能够使用技术的事业，他的慷慨、才华与奉献精神感动了 NVDA 社区中无数用户和开发者同仁。本项目为纪念他而继续推进，并对他所付出的一切致以由衷的感谢。愿他的工作继续为有需要的人打开一扇扇大门。
 
-[1]: https://github.com/ragb/systrayList/releases/download/2026.07.29/systrayList-2026.07.29.nvda-addon
+---
+
+* 作者：Rui Fontes、Rui Batista、Joseph Lee 及 NVDA 社区贡献者
+* NVDA 版本最低要求：2021.1
+* 最后测试的 NVDA 版本：2026.2
+
+此插件允许您通过列表框读取并激活系统托盘或任务栏中的图标，以便轻松访问和操作这些项目。安装插件后，按一次 NVDA+F11 弹出系统托盘元素对话框，按两次则显示任务栏元素（即当前运行的应用程序）。
+
+请注意，任何屏幕阅读器均可通过 Windows+B 访问系统托盘，通过 Windows+T 访问任务栏。此插件主要用于简化从 JAWS for Windows 的过渡，并避免使用系统键盘方式遍历系统托盘时可能弹出的工具提示。
+
+## 更新日志
+
+### 2026.08.24
+
+* 更新了波兰语翻译和文档，由 Kazimierz Parzych 贡献。
+
+### 2026.07.29
+
+* 设置与 NVDA 2026.2 的兼容性。
+* 将最低支持的 NVDA 版本更正为 2021.1。

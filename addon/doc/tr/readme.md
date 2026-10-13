@@ -1,20 +1,28 @@
-# systrayList #
+# sistem Tepsisi Listesi
 
-*   Authors: Rui Fontes, Rui Batista, Joseph Lee, NVDA Community
-    contributors
-*   Download [stable version][1]
-*   NVDA compatibility: 2019.3 and beyond
+## Rui Fontes'in anısına, sevgiyle
 
-This add-on allows you to read and activate icons on the system tray or the
-task bar, within a list box, for easy access and interaction to those
-items. With the add-on installed, press NVDA+f11 once for this dialog to
-pop-up with system tray elements, and press twice to display task bar
-elements, which are the currently running applications.
+Bu eklenti, 11 Temmuz 2026'da vefat eden Rui Fontes'in anısına sevgiyle sürdürülmekte ve geliştirilmektedir.
 
-Note that you can access the windows system tray in any screen reader
-software using the Windows+B, and the task bar by pressing Windows+T. This
-plugin is only useful to make the transition from JAWS for Windows smoother
-and to avoid some tooltips that may pop-up when cycling through the system
-tray with the windows keyboard means.
+Rui, hayatının büyük bir bölümünü görme engelli ve az gören insanlar için teknolojiyi erişilebilir kılmaya adadı ve cömertliği, becerisi ve özverisi NVDA topluluğundaki sayısız kullanıcıyı ve geliştiriciyi etkiledi. Bu proje, onun anısına ve verdiği her şey için yürekten minnettarlıkla devam ettirilmektedir. Umarız çalışmaları, ihtiyacı olanlar için kapılar açmaya devam eder.
 
-[1]: https://github.com/ragb/systrayList/releases/download/2026.07.29/systrayList-2026.07.29.nvda-addon
+---
+
+* Yazarlar: Rui Fontes, Rui Batista, Joseph Lee, NVDA Topluluğuna katkıda bulunanlar
+* Minimum NVDA sürümü: 2021.1
+* Son test edilen NVDA sürümü: 2026.2
+
+Bu eklenti, sistem tepsisindeki veya görev çubuğundaki simgeleri bir liste kutusu içinde okumanıza ve etkinleştirmenize olanak tanıyarak bu öğelere kolay erişim ve etkileşim sağlar. Eklenti yüklendikten sonra, sistem tepsisi öğelerini içeren bu iletişim kutusunun açılması için NVDA+f11 tuşlarına bir kez, görev çubuğu öğelerini (şu anda çalışan uygulamalar) görüntülemek için ise iki kez basın.
+
+Windows sistem tepsisine herhangi bir ekran okuyucu yazılımında Windows+B tuş kombinasyonunu kullanarak, görev çubuğuna ise Windows+T tuş kombinasyonunu kullanarak erişebileceğinizi unutmayın. Bu eklenti yalnızca JAWS for Windows'tan geçişi daha sorunsuz hale getirmek ve Windows klavye araçlarıyla sistem tepsisinde dolaşırken açılabilecek bazı ipuçlarından kaçınmak için kullanışlıdır.
+
+## Değişiklik Günlüğü
+
+### 2026.08.24
+
+* Kazimierz Parzych'in katkılarıyla Lehçe çeviri ve belgeler güncellendi.
+
+### 2026.07.29
+
+* NVDA 2026.2 ile uyumluluk ayarlandı.
+* Desteklenen minimum NVDA sürümü 2021.1 olarak düzeltildi.
