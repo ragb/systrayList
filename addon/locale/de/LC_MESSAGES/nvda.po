@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: nvdaaddons\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2026-10-06 22:48+0000\n"
-"PO-Revision-Date: 2026-10-27 00:20\n"
+"PO-Revision-Date: 2026-11-01 10:42\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -74,5 +74,5 @@ msgstr "Zeigt eine Liste der Schalter im Infobereich an, wenn Sie NVDA+F11 drüc
 #. Translators: what's new content for the add-on version to be shown in the add-on store
 #: buildVars.py:29
 msgid "Updated the Polish translation and documentation."
-msgstr ""
+msgstr "Die polnische Übersetzung und Dokumentation wurden aktualisiert."
 
